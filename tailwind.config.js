@@ -11,6 +11,9 @@ export default {
     ],
 
     theme: {
+        backgroundImage: {
+            'page-bg-image': "url('/images/background.webp')",
+        },
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
