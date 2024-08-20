@@ -1,4 +1,4 @@
-<p align="center"><a href="https://symphonypc.com" target="_blank"><img src="https://symphonypc.com/img/Logog.png" width="400" alt="Symphony PC Logo"></a></p>
+<p align="center"><a href="https://symphonypc.com" target="_blank"><img src="https://github.com/joes3029/qrcode-wireguard/public/images/Symphony PC - Satweb Logo50.png" width="400" alt="Symphony PC Logo"></a></p>
 
 Wireguard QR Code Generator for Mikrotik
 
