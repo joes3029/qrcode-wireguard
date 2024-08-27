@@ -10,16 +10,17 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
 
     return (
         <>
-            <Head title="Welcome" />
+            <Head title="Welcome"/>
             <div className="bg-gray-50 text-black/50 dark:bg-black dark:text-white/50">
                 <img
                     id="background"
                     className="absolute bg-cover min-h-full max-h-full min-w-full"
                     src="/images/background.webp"
                 />
-                <div className="relative min-h-screen flex flex-col items-center justify-top selection:bg-[#FF2D20] selection:text-white">
+                <div
+                    className="relative min-h-screen flex flex-col items-center justify-top selection:bg-[#FF2D20] selection:text-white">
                     <div className="relative w-full max-w-2xl px-6 lg:max-w-7xl">
-                        <header className="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
+                        <header className="grid grid-cols-2 items-center gap-2 pb-10 lg:grid-cols-3">
                             <div className="flex lg:justify-center lg:col-start-2">
                                 <img
                                     id='mikrotik'
@@ -72,14 +73,17 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                                             <h2 className="text-xl font-semibold text-black dark:text-white">
                                                 Wireguard QR Code Generator
                                             </h2>
-
                                             <p className="mt-4 text-md/relaxed text-black dark:text-zinc-200">
-                                                Save your router public key and endpoint. Provide your client IP and
-                                                private key. Scan your QR Code or copy the config.
-                                                It's that easy.
+                                                Add multiple clients to your VPN with ease.
                                             </p>
                                             <p className="mt-4 text-md/relaxed text-black dark:text-zinc-200">
-                                                QR Code generation happens in the browser, so your private key is never sent to the server.
+                                                Save your router public key and endpoint. Provide your client IP and
+                                                private key. Scan your QR Code.<br/>
+                                                It's that easy.
+                                            </p>
+                                            <p className="my-4 text-sm/relaxed text-black dark:text-zinc-200">
+                                                QR Code generation happens in the browser, so your private key is never
+                                                sent to the server.
                                             </p>
                                             <div className="flex flex-1 justify-end">
                                                 <Link
@@ -95,13 +99,13 @@ export default function Welcome({ auth, laravelVersion, phpVersion }) {
                             </div>
 
                         </main>
-
-                        <footer className="py-16 text-center text-md text-white dark:text-white/90">
-                            <a href="https://symphonypc.com">Symphony PC</a>
-                        </footer>
                     </div>
                 </div>
             </div>
+            <span className="py-8 text-center text-md text-white dark:text-gray-300 absolute bottom-0 inset-x-0">Designed by <span
+                className="py-16 text-center text-md text-white dark:text-white/90">
+                    <a href="https://symphonypc.com">Symphony PC</a>
+                </span></span>
         </>
     );
 }

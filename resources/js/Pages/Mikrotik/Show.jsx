@@ -35,7 +35,7 @@ PersistentKeepalive = 25
         <AuthenticatedLayout user={auth}>
             <Head title={`Mikrotik Router - ${mikrotik.router}`} />
 
-            <div className="p-6 bg-white rounded shadow">
+            <div className="p-6 bg-white rounded shadow m-20 border-2 border-slate-800">
                 <div className="mb-4">
                     <h2 className="text-xl font-semibold text-gray-800">
                         Router: {mikrotik.router}
@@ -93,7 +93,6 @@ PersistentKeepalive = 25
                                 {wireguardConfig}
                             </pre>
                         </div>
-
                     </div>
                 )}
             </div>
