@@ -90,6 +90,6 @@ class MikrotikController extends Controller
     {
         Gate::authorize('delete', $mikrotik);
         $mikrotik->delete();
-        return redirect(route('mikrotik.index'));
+        return redirect()->route('mikrotik.index');
     }
 }

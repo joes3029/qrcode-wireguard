@@ -16,7 +16,9 @@ Route::get('/', function () {
 });
 
 Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
+    return Inertia::render('Dashboard', [
+        'routers' => \App\Models\Mikrotik::where('user_id', auth()->id())->get(),
+    ]);
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 //Route::redirect('/dashboard', '/mikrotik', 301);
@@ -28,9 +30,8 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::resource('mikrotik', MikrotikController::class)
-    ->only(['index', 'store'])
     ->only(['index', 'store', 'update', 'destroy'])
-    ->middleware(['auth', 'verified']);
+    ->middleware(['auth']);
 
 //Route::get('/mikrotik', [MikrotikController::class, 'index'])->name('mikrotik');
 
