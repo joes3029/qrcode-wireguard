@@ -17,6 +17,7 @@ export default function Dashboard() {
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                         <div className="p-6 text-gray-900">Manage your routers from here</div>
                         {routers.length? (
+                            <>
                             <ul className='divide-y'>
                                 {routers.map(router => (
                                     <li key={router.id} className='py-2 flex justify-between items-center'>
@@ -27,22 +28,21 @@ export default function Dashboard() {
                                     </li>
                                 ))}
                             </ul>
+                            <Link
+                                href={route('mikrotik.index')}
+                                className='inline-block px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition'
+                            >
+                                View routers
+                            </Link>
+                            </>
                         ) : (
-                            <p className="text-gray-600">No routers yet.
-                                <Link
+                            <p className="text-gray-600 px-2">No routers yet: <Link
                                     href={route('mikrotik.index')}
-                                    className="text-indigo-600 underline">
-                                    Add one
-                                </Link>.
+                                    className="inline-block px-4 ms-2 mb-2 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">Add one</Link>
                             </p>
                         )}
 
-                        <Link
-                            href={route('mikrotik.index')}
-                            className='inline-block px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition'
-                            >
-                            View routers
-                        </Link>
+
                     </div>
                 </div>
             </div>
