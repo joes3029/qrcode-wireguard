@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreRouterRequest;
 use App\Models\Mikrotik;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -34,13 +35,9 @@ class MikrotikController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request): RedirectResponse
+    public function store(StoreRouterRequest $request): RedirectResponse
     {
-        $validated = $request->validate([
-            'router' => 'required|string|max:255',
-            'publicKey' => 'required|string|max:255',
-        ]);
-
+        $validated = $request->validated;
         $request->user()->mikrotik()->create($validated);
 
         return redirect(route('mikrotik.index'));
@@ -72,13 +69,10 @@ class MikrotikController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Mikrotik $mikrotik): RedirectResponse
+    public function update(StoreRouterRequest $request, Mikrotik $mikrotik): RedirectResponse
     {
         Gate::authorize('update', $mikrotik);
-        $validated = $request->validate([
-            'router' => 'required|string|max:255',
-            'publicKey' => 'required|string|max:255',
-        ]);
+        $validated = $request->validated;
         $mikrotik->update($validated);
         return redirect(route('mikrotik.index'));
     }
